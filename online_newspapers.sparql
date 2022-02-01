@@ -1,0 +1,9 @@
+# online newspapers
+# https://query.wikidata.org/
+SELECT ?item ?itemLabel ?url
+WHERE 
+{
+  ?item wdt:P31 wd:Q1153191. # Must be online newspaper
+  ?item wdt:P856 ?url. # url
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". } # Helps get the label in your language, if not, then en language
+}
